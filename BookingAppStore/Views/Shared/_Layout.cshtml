@@ -1,0 +1,17 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" />
+</head>
+<body>
+    <nav>
+        <ul class="dropdown-menu">
+            <li>@Html.ActionLink("Головна", "Index", "Home")</li>
+        </ul>
+    </nav>
+    @RenderBody()
+    <footer>@RenderSection("Footer",false)</footer>
+</body>
+</html>

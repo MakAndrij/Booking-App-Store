@@ -1,0 +1,29 @@
+﻿@model BookingAppStore.Models.Purchase
+
+@{
+    ViewBag.Title = "Покупка книги";
+}
+ 
+<div>
+    <h3>Форма оформлення купівлі</h3>
+    @using (Html.BeginForm("Buy", "Home", FormMethod.Post))
+    {
+        @*<input type="hidden" name="BookId" value="@ViewBag.BookId" />*@
+        @Html.HiddenFor(m=>m.BookId)
+        <table>
+            <tr>
+                <td><p>@Html.LabelFor(m=>m.Person,"Введіть адрес")</p></td>
+                <td>@Html.EditorFor(m=>m.Person)</td>
+            </tr>
+            <tr>
+                <td><p>@Html.Label("Address", "Введіть адрес")</p></td>
+                <td>@Html.EditorFor(m=>m.Address)</td>
+            </tr>
+            <tr><td><input type="submit" value="Відправити" /></td></tr>
+        </table>
+    }
+
+</div>
+@section Footer
+{
+    <h5>Всі права під ключем</h5>}
